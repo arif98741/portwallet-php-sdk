@@ -1,17 +1,17 @@
 <?php
 
-namespace PortWallet\Services;
+namespace Xenon\PortWallet\Services;
 
 
-use PortWallet\Exceptions\BadRequestException;
-use PortWallet\Exceptions\InternalServiceException;
-use PortWallet\Exceptions\NotFoundException;
-use PortWallet\Exceptions\UnauthorizedException;
-use PortWallet\Invoice;
-use PortWallet\Recurring;
-use PortWallet\Exceptions\PortWalletClientException;
-use PortWallet\RecurringCancel; 
-use PortWallet\Traits\ResponseTrait;
+use Xenon\PortWallet\Exceptions\BadRequestException;
+use Xenon\PortWallet\Exceptions\InternalServiceException;
+use Xenon\PortWallet\Exceptions\NotFoundException;
+use Xenon\PortWallet\Exceptions\UnauthorizedException;
+use Xenon\PortWallet\Invoice;
+use Xenon\PortWallet\Recurring;
+use Xenon\PortWallet\Exceptions\PortWalletClientException;
+use Xenon\PortWallet\RecurringCancel; 
+use Xenon\PortWallet\Traits\ResponseTrait;
 
 class RecurringService extends AbstractService
 {

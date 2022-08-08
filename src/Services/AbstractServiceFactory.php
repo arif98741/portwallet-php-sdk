@@ -1,12 +1,12 @@
 <?php
 
-namespace PortWallet\Services;
+namespace Xenon\PortWallet\Services;
 
-use PortWallet\PortWalletClientInterface;
+use Xenon\PortWallet\PortWalletClientInterface;
 
 /**
  * Abstract base class for all service factories used to expose service
- * instances through {@link \PortWallet\PortWalletClient}.
+ * instances through {@link \Xenon\PortWallet\PortWalletClient}.
  *
  * Services factories serve two purposes:
  *

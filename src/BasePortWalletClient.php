@@ -1,9 +1,9 @@
 <?php
 
-namespace PortWallet;
+namespace Xenon\PortWallet;
 
-use PortWallet\Exceptions\InvalidArgumentException;
-use PortWallet\Exceptions\PortWalletClientException;
+use Xenon\PortWallet\Exceptions\InvalidArgumentException;
+use Xenon\PortWallet\Exceptions\PortWalletClientException;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
@@ -163,7 +163,7 @@ class BasePortWalletClient implements PortWalletClientInterface
      */
     private function buildPath(string $path): string
     {
-        $api_base = $this->config['api_mode'] == 'sandbox' ? $this->config['api_base_sandbox'] : $this->config['api_base_live'];
+        $api_base = $this->config['api_mode'] === 'sandbox' ? $this->config['api_base_sandbox'] : $this->config['api_base_live'];
         return trim($api_base, '/') . '/' . $this->config['api_version'] . '/' . trim($path, '/');
     }
 

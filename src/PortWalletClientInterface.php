@@ -1,6 +1,6 @@
 <?php
 
-namespace PortWallet;
+namespace Xenon\PortWallet;
 
 /**
  * Interface for a PortWallet client.

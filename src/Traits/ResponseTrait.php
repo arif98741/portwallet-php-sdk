@@ -1,17 +1,17 @@
 <?php
 
 
-namespace PortWallet\Traits;
+namespace Xenon\PortWallet\Traits;
 
 
 use Symfony\Contracts\HttpClient\Exception\{
     ClientExceptionInterface, RedirectionExceptionInterface, ServerExceptionInterface, TransportExceptionInterface
 };
-use PortWallet\Exceptions\BadRequestException;
-use PortWallet\Exceptions\InternalServiceException;
-use PortWallet\Exceptions\NotFoundException;
-use PortWallet\Exceptions\PortWalletClientException;
-use PortWallet\Exceptions\UnauthorizedException;
+use Xenon\PortWallet\Exceptions\BadRequestException;
+use Xenon\PortWallet\Exceptions\InternalServiceException;
+use Xenon\PortWallet\Exceptions\NotFoundException;
+use Xenon\PortWallet\Exceptions\PortWalletClientException;
+use Xenon\PortWallet\Exceptions\UnauthorizedException;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 trait ResponseTrait

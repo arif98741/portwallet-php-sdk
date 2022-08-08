@@ -1,10 +1,10 @@
 <?php
 
 
-namespace PortWallet;
+namespace Xenon\PortWallet;
 
 
-use PortWallet\Exceptions\InvalidArgumentException;
+use Xenon\PortWallet\Exceptions\InvalidArgumentException;
 
 abstract class BaseObject
 {
@@ -25,9 +25,9 @@ abstract class BaseObject
     {
         if (property_exists($this, $name)) {
             throw new InvalidArgumentException('Property ' . $name . ' exists. You cannot update existing property.');
-        } else {
-            $this->{$name} = $value;
         }
+
+        $this->{$name} = $value;
     }
 
     /**
@@ -40,8 +40,8 @@ abstract class BaseObject
     {
         if (isset($this->{$name})) {
             return $this->{$name};
-        } else {
-            throw new InvalidArgumentException('Property ' . $name . ' not found.');
         }
+
+        throw new InvalidArgumentException('Property ' . $name . ' not found.');
     }
 }

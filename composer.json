@@ -1,5 +1,5 @@
 {
-    "name": "portwallet/php-sdk",
+    "name": "xenon/portwallet-php-sdk",
     "description": "PortWallet payment gateway PHP SDK for APIv2",
     "type": "library",
     "license": "apache-2.0",
@@ -12,17 +12,22 @@
         {
             "name": "Zohurul Islam",
             "email": "zohurul.islam@portonics.com"
+        },
+        {
+            "name": "Ariful Islam",
+            "email": "arif98741@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.2",
+        "php": "^7.2|^7.3|^7.4|8.*",
         "symfony/http-client": "^5.1",
-        "justinrainbow/json-schema": "^5.2"
+        "justinrainbow/json-schema": "^5.2",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
-            "PortWallet\\": "lib"
+            "Xenon\\PortWallet\\": "src"
         }
     }
 }

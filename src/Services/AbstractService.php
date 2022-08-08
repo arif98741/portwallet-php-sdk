@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PortWallet\Services;
+namespace Xenon\PortWallet\Services;
 
 
 abstract class AbstractService

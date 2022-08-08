@@ -1,10 +1,10 @@
 <?php
 
-namespace PortWallet;
+namespace Xenon\PortWallet;
 
-use PortWallet\Services\CoreServiceFactory;
-use PortWallet\Services\InvoiceService;
-use PortWallet\Services\RecurringService;
+use Xenon\PortWallet\Services\CoreServiceFactory;
+use Xenon\PortWallet\Services\InvoiceService;
+use Xenon\PortWallet\Services\RecurringService;
 
 /**
  * Client used to send requests to PortWallet's API.

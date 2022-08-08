@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PortWallet;
+namespace Xenon\PortWallet;
 
 
 class Recurring extends BaseObject

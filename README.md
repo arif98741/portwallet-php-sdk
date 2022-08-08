@@ -1,8 +1,9 @@
-## PortWallet PHP SDK APIv2
+## PortWallet PHP SDK APIv2. This is fork repository of <br> https://github.com/PortWallet/php-sdk; 
+I am just forking and added support for several php versions
 
 ### Installation
 ```
-composer require portwallet/php-sdk
+composer require xenon/portwallet-php-sdk
 ```
 
 ### Usage
@@ -16,9 +17,9 @@ Here, `$data` is the `order payload` which is an array
 
 Sample data example
 ```
-use PortWallet\Exceptions\PortWalletClientException;
-use PortWallet\PortWallet;
-use PortWallet\PortWalletClient; 
+use Xenon\PortWallet\Exceptions\PortWalletClientException;
+use Xenon\PortWallet\PortWallet;
+use Xenon\PortWallet\PortWalletClient; 
 
 /**
  * 

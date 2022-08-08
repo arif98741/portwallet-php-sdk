@@ -1,6 +1,6 @@
 <?php
 
-namespace PortWallet\Services;
+namespace Xenon\PortWallet\Services;
 
 /**
  * Services factory class for API resources in the root namespace.

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PortWallet\Exceptions;
+namespace Xenon\PortWallet\Exceptions;
 
 
 class PortWalletException extends \Exception {}

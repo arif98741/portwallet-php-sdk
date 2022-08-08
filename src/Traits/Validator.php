@@ -1,12 +1,12 @@
 <?php
 
 
-namespace PortWallet\Traits;
+namespace Xenon\PortWallet\Traits;
 
 
 use JsonSchema\Constraints\Constraint;
 use JsonSchema\Validator as jsonValidator;
-use PortWallet\Exceptions\PortWalletClientException;
+use Xenon\PortWallet\Exceptions\PortWalletClientException;
 
 trait Validator
 {

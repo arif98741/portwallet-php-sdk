@@ -1,6 +1,6 @@
 <?php
 
-namespace PortWallet;
+namespace Xenon\PortWallet;
 
 
 class RecurringCancel extends BaseObject

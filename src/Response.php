@@ -1,10 +1,10 @@
 <?php
 
 
-namespace PortWallet;
+namespace Xenon\PortWallet;
 
 
-use PortWallet\Exceptions\InvalidArgumentException;
+use Xenon\PortWallet\Exceptions\InvalidArgumentException;
 
 class Response
 {
