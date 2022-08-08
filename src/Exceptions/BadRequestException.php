@@ -4,4 +4,6 @@
 namespace Xenon\PortWallet\Exceptions;
 
 
-class BadRequestException extends PortWalletException {}
+class BadRequestException extends PortWalletException
+{
+}

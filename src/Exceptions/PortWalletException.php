@@ -4,4 +4,6 @@
 namespace Xenon\PortWallet\Exceptions;
 
 
-class PortWalletException extends \Exception {}
+class PortWalletException extends \Exception
+{
+}

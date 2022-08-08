@@ -97,34 +97,6 @@ class Recurring extends BaseObject
     public $history;
 
     /**
-     * Set data for recurring object
-     *
-     * @param object $data
-     * @return void
-     */
-    protected function setContent(object $data): void
-    {
-        $this->id = $data->id;
-        $this->status = $data->status;
-        $this->name = $data->name;
-        $this->description = $data->description;
-        $this->period = $data->period;
-        $this->has_trial = $data->has_trial;
-        $this->trial = $data->trial;
-        $this->has_offers = $data->has_offers;
-        $this->offers = $data->offers;
-        $this->is_prorated = $data->is_prorated;
-        $this->payment = $data->payment;
-        $this->started = $data->started;
-        $this->ended_at = $data->ended_at;
-        $this->next_payment = $data->next_payment;
-        $this->customer = $data->customer;
-        $this->user_id = $data->user_id;
-        $this->source = $data->source;
-        $this->history = $data->history;
-    }
-
-    /**
      * @return string
      */
     public function getId(): string
@@ -266,5 +238,33 @@ class Recurring extends BaseObject
     public function getHistory(): array
     {
         return $this->history;
+    }
+
+    /**
+     * Set data for recurring object
+     *
+     * @param object $data
+     * @return void
+     */
+    protected function setContent(object $data): void
+    {
+        $this->id = $data->id;
+        $this->status = $data->status;
+        $this->name = $data->name;
+        $this->description = $data->description;
+        $this->period = $data->period;
+        $this->has_trial = $data->has_trial;
+        $this->trial = $data->trial;
+        $this->has_offers = $data->has_offers;
+        $this->offers = $data->offers;
+        $this->is_prorated = $data->is_prorated;
+        $this->payment = $data->payment;
+        $this->started = $data->started;
+        $this->ended_at = $data->ended_at;
+        $this->next_payment = $data->next_payment;
+        $this->customer = $data->customer;
+        $this->user_id = $data->user_id;
+        $this->source = $data->source;
+        $this->history = $data->history;
     }
 }

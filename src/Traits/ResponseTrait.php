@@ -4,15 +4,16 @@
 namespace Xenon\PortWallet\Traits;
 
 
-use Symfony\Contracts\HttpClient\Exception\{
-    ClientExceptionInterface, RedirectionExceptionInterface, ServerExceptionInterface, TransportExceptionInterface
-};
+use Symfony\Contracts\HttpClient\Exception\{ClientExceptionInterface,
+    RedirectionExceptionInterface,
+    ServerExceptionInterface,
+    TransportExceptionInterface};
+use Symfony\Contracts\HttpClient\ResponseInterface;
 use Xenon\PortWallet\Exceptions\BadRequestException;
 use Xenon\PortWallet\Exceptions\InternalServiceException;
 use Xenon\PortWallet\Exceptions\NotFoundException;
 use Xenon\PortWallet\Exceptions\PortWalletClientException;
 use Xenon\PortWallet\Exceptions\UnauthorizedException;
-use Symfony\Contracts\HttpClient\ResponseInterface;
 
 trait ResponseTrait
 {
@@ -47,10 +48,10 @@ trait ResponseTrait
             return $content;
 
         } catch (
-            ClientExceptionInterface
-            | RedirectionExceptionInterface
-            | ServerExceptionInterface
-            | TransportExceptionInterface $e
+        ClientExceptionInterface
+        |RedirectionExceptionInterface
+        |ServerExceptionInterface
+        |TransportExceptionInterface $e
         ) {
             $message = $e->getMessage() . ' Please check your internet connection.';
 

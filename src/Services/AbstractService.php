@@ -18,6 +18,18 @@ abstract class AbstractService
     }
 
     /**
+     * @param $method
+     * @param $path
+     * @param $params
+     * @param $opts
+     * @return mixed
+     */
+    protected function request($method, $path, $params, $opts)
+    {
+        return $this->getClient()->request($method, $path, static::formatParams($params), $opts);
+    }
+
+    /**
      * @return mixed
      */
     public function getClient()
@@ -37,17 +49,5 @@ abstract class AbstractService
         });
 
         return $params;
-    }
-
-    /**
-     * @param $method
-     * @param $path
-     * @param $params
-     * @param $opts
-     * @return mixed
-     */
-    protected function request($method, $path, $params, $opts)
-    {
-        return $this->getClient()->request($method, $path, static::formatParams($params), $opts);
     }
 }

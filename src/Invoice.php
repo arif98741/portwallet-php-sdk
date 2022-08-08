@@ -7,7 +7,7 @@ namespace Xenon\PortWallet;
 class Invoice extends BaseObject
 {
     /**
-     * PortWallet payment urls 
+     * PortWallet payment urls
      *
      * @var array
      */
@@ -55,23 +55,6 @@ class Invoice extends BaseObject
      * @var object $action
      */
     public $action;
-
-    /**
-     * Set invoice data
-     *
-     * @param object $content
-     */
-    protected function setContent(object $content)
-    {
-        $this->invoice_id = $content->data->invoice_id;
-        $this->reference = $content->data->reference;
-        $this->order = $content->data->order;
-        $this->product = $content->data->product;
-        $this->billing = $content->data->billing;
-        $this->shipping = $content->data->shipping;
-        $this->action = isset($content->data->action) ? $content->data->action : (object)[];
-        $this->customs = isset($content->data->customs) ? $content->data->customs : [];
-    }
 
     /**
      * @return string
@@ -138,7 +121,7 @@ class Invoice extends BaseObject
     }
 
     /**
-     * Payment Url 
+     * Payment Url
      *
      * @return string
      */
@@ -146,5 +129,22 @@ class Invoice extends BaseObject
     {
         $url = $this->paymentUrl[PortWallet::getApiMode()];
         return "{$url}{$this->invoice_id}";
+    }
+
+    /**
+     * Set invoice data
+     *
+     * @param object $content
+     */
+    protected function setContent(object $content)
+    {
+        $this->invoice_id = $content->data->invoice_id;
+        $this->reference = $content->data->reference;
+        $this->order = $content->data->order;
+        $this->product = $content->data->product;
+        $this->billing = $content->data->billing;
+        $this->shipping = $content->data->shipping;
+        $this->action = isset($content->data->action) ? $content->data->action : (object)[];
+        $this->customs = isset($content->data->customs) ? $content->data->customs : [];
     }
 }

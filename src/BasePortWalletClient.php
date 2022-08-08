@@ -2,28 +2,27 @@
 
 namespace Xenon\PortWallet;
 
-use Xenon\PortWallet\Exceptions\InvalidArgumentException;
-use Xenon\PortWallet\Exceptions\PortWalletClientException;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
+use Xenon\PortWallet\Exceptions\InvalidArgumentException;
+use Xenon\PortWallet\Exceptions\PortWalletClientException;
 
 class BasePortWalletClient implements PortWalletClientInterface
 {
-    /**
-     * Holds all the configurations for PortWallet API
-     *
-     * @var array
-     */
-    private $config = [];
-
     /**
      * Holds Symfony HttpClient instance
      *
      * @var HttpClientInterface
      */
     protected $client;
+    /**
+     * Holds all the configurations for PortWallet API
+     *
+     * @var array
+     */
+    private $config = [];
 
     /**
      * BasePortWalletClient constructor.
@@ -43,6 +42,37 @@ class BasePortWalletClient implements PortWalletClientInterface
         $this->validateConfig($config);
 
         $this->config = $config;
+    }
+
+    /**
+     * Get default configurations
+     *
+     * @return array
+     */
+    private function getDefaultConfig(): array
+    {
+        return [
+            'api_key' => '',
+            'api_secret' => '',
+            'api_base_live' => PortWallet::$apiBaseLive,
+            'api_base_sandbox' => PortWallet::$apiBaseSandbox,
+            'api_version' => PortWallet::$apiVersion,
+            'api_mode' => PortWallet::$apiMode
+        ];
+    }
+
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @throws InvalidArgumentException
+     */
+    private function validateConfig($config)
+    {
+        // check absence of extra keys
+        $extraConfigKeys = \array_diff(\array_keys($config), \array_keys($this->getDefaultConfig()));
+        if (!empty($extraConfigKeys)) {
+            throw new InvalidArgumentException('Found unknown key(s) in configuration array: ' . \implode(',', $extraConfigKeys));
+        }
     }
 
     /**
@@ -121,37 +151,6 @@ class BasePortWalletClient implements PortWalletClientInterface
             return $client->request($method, $url, $options);
         } catch (TransportExceptionInterface $e) {
             throw new PortWalletClientException($e);
-        }
-    }
-
-    /**
-     * Get default configurations
-     *
-     * @return array
-     */
-    private function getDefaultConfig(): array
-    {
-        return [
-            'api_key' => '',
-            'api_secret' => '',
-            'api_base_live' => PortWallet::$apiBaseLive,
-            'api_base_sandbox' => PortWallet::$apiBaseSandbox,
-            'api_version' => PortWallet::$apiVersion,
-            'api_mode' => PortWallet::$apiMode
-        ];
-    }
-
-    /**
-     * @param array<string, mixed> $config
-     *
-     * @throws InvalidArgumentException
-     */
-    private function validateConfig($config)
-    {
-        // check absence of extra keys
-        $extraConfigKeys = \array_diff(\array_keys($config), \array_keys($this->getDefaultConfig()));
-        if (!empty($extraConfigKeys)) {
-            throw new InvalidArgumentException('Found unknown key(s) in configuration array: ' . \implode(',', $extraConfigKeys));
         }
     }
 

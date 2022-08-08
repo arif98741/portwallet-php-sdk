@@ -4,4 +4,6 @@
 namespace Xenon\PortWallet\Exceptions;
 
 
-class UnauthorizedException extends PortWalletException {}
+class UnauthorizedException extends PortWalletException
+{
+}

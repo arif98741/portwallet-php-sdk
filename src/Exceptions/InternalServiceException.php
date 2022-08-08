@@ -4,4 +4,6 @@
 namespace Xenon\PortWallet\Exceptions;
 
 
-class InternalServiceException extends PortWalletException {}
+class InternalServiceException extends PortWalletException
+{
+}

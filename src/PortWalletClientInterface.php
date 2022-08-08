@@ -26,14 +26,14 @@ interface PortWalletClientInterface
      *
      * @return string the base URL for PortWallet's API
      */
-    public function getApiBaseLive():string;
+    public function getApiBaseLive(): string;
 
     /**
      * Gets the base URL for PortWallet's API.
      *
      * @return string the base URL for PortWallet's API
      */
-    public function getApiBaseSandbox():string;
+    public function getApiBaseSandbox(): string;
 
     /**
      * Sends a request to PortWallet's API.

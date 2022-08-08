@@ -16,21 +16,6 @@ abstract class BaseObject
     abstract protected function setContent(object $content);
 
     /**
-     * Set a new property to existing data
-     *
-     * @param $name string the new key to set
-     * @param $value mixed
-     */
-    public function __set(string $name, $value): void
-    {
-        if (property_exists($this, $name)) {
-            throw new InvalidArgumentException('Property ' . $name . ' exists. You cannot update existing property.');
-        }
-
-        $this->{$name} = $value;
-    }
-
-    /**
      * Dynamically accessing data properties
      *
      * @param $name
@@ -43,5 +28,20 @@ abstract class BaseObject
         }
 
         throw new InvalidArgumentException('Property ' . $name . ' not found.');
+    }
+
+    /**
+     * Set a new property to existing data
+     *
+     * @param $name string the new key to set
+     * @param $value mixed
+     */
+    public function __set(string $name, $value): void
+    {
+        if (property_exists($this, $name)) {
+            throw new InvalidArgumentException('Property ' . $name . ' exists. You cannot update existing property.');
+        }
+
+        $this->{$name} = $value;
     }
 }

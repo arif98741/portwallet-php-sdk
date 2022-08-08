@@ -39,21 +39,6 @@ class Response
     }
 
     /**
-     * Set a new property to existing data
-     *
-     * @param $name string the new key to set
-     * @param $value mixed
-     */
-    public function __set(string $name, $value): void
-    {
-        if (property_exists($this->data, $name)) {
-            throw new InvalidArgumentException('Property ' . $name . ' exists. You cannot update existing property.');
-        } else {
-            $this->data->{$name} = $value;
-        }
-    }
-
-    /**
      * Dynamically accessing data properties
      *
      * @param $name
@@ -65,6 +50,21 @@ class Response
             return $this->data->{$name};
         } else {
             throw new InvalidArgumentException('Property ' . $name . ' not found.');
+        }
+    }
+
+    /**
+     * Set a new property to existing data
+     *
+     * @param $name string the new key to set
+     * @param $value mixed
+     */
+    public function __set(string $name, $value): void
+    {
+        if (property_exists($this->data, $name)) {
+            throw new InvalidArgumentException('Property ' . $name . ' exists. You cannot update existing property.');
+        } else {
+            $this->data->{$name} = $value;
         }
     }
 }

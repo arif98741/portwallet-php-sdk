@@ -16,12 +16,6 @@ class InvoiceRefund extends BaseObject
      */
     public $refund;
 
-    protected function setContent(object $content)
-    {
-        $this->order = $content->order;
-        $this->refund = $content->refund;
-    }
-
     /**
      * @return mixed
      */
@@ -36,5 +30,11 @@ class InvoiceRefund extends BaseObject
     public function getRefund()
     {
         return $this->refund;
+    }
+
+    protected function setContent(object $content)
+    {
+        $this->order = $content->order;
+        $this->refund = $content->refund;
     }
 }

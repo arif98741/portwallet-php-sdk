@@ -4,4 +4,6 @@
 namespace Xenon\PortWallet\Exceptions;
 
 
-class InvalidArgumentException extends \InvalidArgumentException {}
+class InvalidArgumentException extends \InvalidArgumentException
+{
+}

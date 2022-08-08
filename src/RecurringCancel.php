@@ -15,12 +15,6 @@ class RecurringCancel extends BaseObject
      */
     public $message;
 
-    protected function setContent(object $content)
-    {
-        $this->recurring_id = $content->data->id;
-        $this->message = $content->data->message;
-    }
-
     /**
      * @return mixed
      */
@@ -35,5 +29,11 @@ class RecurringCancel extends BaseObject
     public function getMessage()
     {
         return $this->message;
+    }
+
+    protected function setContent(object $content)
+    {
+        $this->recurring_id = $content->data->id;
+        $this->message = $content->data->message;
     }
 }

@@ -4,4 +4,6 @@
 namespace Xenon\PortWallet\Exceptions;
 
 
-class NotFoundException extends PortWalletException {}
+class NotFoundException extends PortWalletException
+{
+}

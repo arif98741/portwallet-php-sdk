@@ -37,6 +37,17 @@ class InvoiceService extends AbstractService
     }
 
     /**
+     * Generate an invoice object
+     *
+     * @param object $content
+     * @return Invoice
+     */
+    private function makeInvoice(object $content): Invoice
+    {
+        return new Invoice($content);
+    }
+
+    /**
      * Retrieve an existing invoice
      *
      * @param string $invoiceId
@@ -96,16 +107,5 @@ class InvoiceService extends AbstractService
         $content = $this->getContent($response);
 
         return new InvoiceRefund($content);
-    }
-
-    /**
-     * Generate an invoice object
-     *
-     * @param object $content
-     * @return Invoice
-     */
-    private function makeInvoice(object $content): Invoice
-    {
-        return new Invoice($content);
     }
 }

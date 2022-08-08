@@ -6,11 +6,11 @@ namespace Xenon\PortWallet\Services;
 use Xenon\PortWallet\Exceptions\BadRequestException;
 use Xenon\PortWallet\Exceptions\InternalServiceException;
 use Xenon\PortWallet\Exceptions\NotFoundException;
+use Xenon\PortWallet\Exceptions\PortWalletClientException;
 use Xenon\PortWallet\Exceptions\UnauthorizedException;
 use Xenon\PortWallet\Invoice;
 use Xenon\PortWallet\Recurring;
-use Xenon\PortWallet\Exceptions\PortWalletClientException;
-use Xenon\PortWallet\RecurringCancel; 
+use Xenon\PortWallet\RecurringCancel;
 use Xenon\PortWallet\Traits\ResponseTrait;
 
 class RecurringService extends AbstractService
