@@ -9,7 +9,7 @@ composer require xenon/portwallet-php-sdk
 ### Usage
 This guideline will follow [PortWallet Payment GateWay v2.0](http://developer.portwallet.com/documentation-v2.php)
 ```
-$portWallet = new \PortWallet\PortWalletClient($apiKey, $apiSecret);
+$portWallet = new \Xenon\PortWallet\PortWalletClient($apiKey, $apiSecret);
 ```
 
 #### Create an invoice

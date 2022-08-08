@@ -48,9 +48,9 @@ class Response
     {
         if (isset($this->data->{$name})) {
             return $this->data->{$name};
-        } else {
-            throw new InvalidArgumentException('Property ' . $name . ' not found.');
         }
+
+        throw new InvalidArgumentException('Property ' . $name . ' not found.');
     }
 
     /**
@@ -63,8 +63,8 @@ class Response
     {
         if (property_exists($this->data, $name)) {
             throw new InvalidArgumentException('Property ' . $name . ' exists. You cannot update existing property.');
-        } else {
-            $this->data->{$name} = $value;
         }
+
+        $this->data->{$name} = $value;
     }
 }
